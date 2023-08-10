@@ -1,0 +1,26 @@
+﻿capital = 540
+
+recruit_character = ADX_test_leader
+
+set_research_slots = 0
+
+set_technology = {
+	infantry_weapons = 0
+	tech_support = 0
+	tech_recon = 0
+}
+
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1933.3.5"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	neutrality = 100
+}
+
+set_convoys = 1000
+

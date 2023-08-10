@@ -1,0 +1,16 @@
+characters = {
+	ADX_test_leader = {
+		name = "By AdamDX"
+		portraits = {
+			civilian = {
+				large ="gfx/leaders/ADX/Portrait_ADX_Test.dds"
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = {neutral_leader}
+			expire="1999.1.1.1"
+			id = -1
+		}
+	}
+	

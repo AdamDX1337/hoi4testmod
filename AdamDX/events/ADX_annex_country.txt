@@ -1,0 +1,202 @@
+add_namespace = ADX_annex_country
+
+
+####### FOR SOME REASON IT ONLY FIRES ON THE TEST COUNTRY AND NOT ALL COUNTRIES EVEN THOUGH ITS SET TO MAJOR, HELP!
+ 
+#Annex all Countries
+country_event = {
+	id = ADX_annex_country.1
+	title = ADX_annex_country.1.t
+	desc = ADX_annex_country.1.d
+
+	picture = ADX_annex_all_countries-491
+	fire_only_once = yes
+	major = yes
+		trigger = {
+		tag = ADX 
+		owns_state = 540
+		}
+	timeout_days = 24
+	mean_time_to_happen = { days = 7 }
+	fire_for_sender = yes
+
+	option = {
+		name = ADX_annex_country.1.a
+		ai_chance = { factor = 1 }
+		annex_country = { 
+			target = IRQ transfer_troops = no
+		}
+		annex_country = { 
+			target = LIB transfer_troops = no
+		}
+				annex_country = { 
+			target = SAU transfer_troops = no
+		}
+				annex_country = { 
+			target = YEM transfer_troops = no
+		}
+				annex_country = { 
+			target = OMA transfer_troops = no
+		}
+				annex_country = { 
+			target = PER transfer_troops = no
+		}
+				annex_country = { 
+			target = AFG transfer_troops = no
+		}
+				annex_country = { 
+			target = TIB transfer_troops = no
+		}
+				annex_country = { 
+			target = BHU transfer_troops = no
+		}
+				annex_country = { 
+			target = NEP transfer_troops = no
+		}
+				annex_country = { 
+			target = SIK transfer_troops = no
+		}
+				annex_country = { 
+			target = CHL transfer_troops = no
+		}
+				annex_country = { 
+			target = URG transfer_troops = no
+		}
+				annex_country = { 
+			target = PAR transfer_troops = no
+		}
+				annex_country = { 
+			target = BOL transfer_troops = no
+		}
+				annex_country = { 
+			target = PER transfer_troops = no
+		}	
+				annex_country = { 
+			target = ECU transfer_troops = no
+		}
+		annex_country = { 
+			target = COL transfer_troops = no
+		}
+				annex_country = { 
+			target = VEN transfer_troops = no
+		}
+				annex_country = { 
+			target = PAN transfer_troops = no
+		}
+				annex_country = { 
+			target = COS transfer_troops = no
+		}
+				annex_country = { 
+			target = NIC transfer_troops = no
+		}
+				annex_country = { 
+			target = HON transfer_troops = no
+		}
+				annex_country = { 
+			target = ELS transfer_troops = no
+		}
+				annex_country = { 
+			target = GUA transfer_troops = no
+		}
+				annex_country = { 
+			target = CUB transfer_troops = no
+		}
+				annex_country = { 
+			target = HAI transfer_troops = no
+		}
+				annex_country = { 
+			target = DOM transfer_troops = no
+		}
+		annex_country = { 
+			target = PRU transfer_troops = no
+		}
+		ADX = { transfer_state = 659 }
+		ADX = { transfer_state = 658 }
+		ADX = { transfer_state = 765 }
+		ADX = { transfer_state = 656 }
+		ADX = { transfer_state = 796 }
+		ADX = { transfer_state = 311 }
+		ADX = { transfer_state = 689 }
+		ADX = { transfer_state = 310 }
+		ADX = { transfer_state = 775 }
+		ADX = { transfer_state = 515 }
+		ADX = { transfer_state = 514 }
+		ADX = { transfer_state = 786 }
+		ADX = { transfer_state = 782 }
+		ADX = { transfer_state = 273 }
+		ADX = { transfer_state = 552 }
+		ADX = { transfer_state = 767 }
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = ADX_annex_country.1.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+#Core the Land, discard other cores on the land
+country_event = {
+	id = ADX_annex_country.2
+	title = ADX_annex_country.2.t
+	desc = ADX_annex_country.2.d
+
+	picture = ADX_core_the_land-456
+	fire_only_once = yes
+	trigger = {
+		tag = ADX 
+		owns_state = 659
+		}
+	mean_time_to_happen = { days = 7 }
+	timeout_days = 13
+	fire_for_sender = yes
+	major = yes
+	option = {
+		name = ADX_annex_country.2.a
+		ai_chance = { factor = 1 }
+		every_state = {
+           limit = {
+                AND = {
+                   is_controlled_by = ADX
+                   NOT = { is_core_of = ADX }
+               }
+          }
+        add_core_of = ADX
+		}
+		        every_state = {
+            limit = {
+                is_core_of = ADX
+                is_controlled_by = ADX
+                is_owned_by = ADX
+            }
+            every_country = {
+			limit = {
+                    NOT = { has_country_flag = TEST }
+                }
+                remove_state_core = PREV
+                remove_state_claim = PREV
+            }
+        }
+		hidden_effect = {
+			
+		}
+	}
+}
+# ADX = { transfer_state = 659 }
+#		every_state = {
+ #           limit = {
+  #              AND = {
+   #                 is_controlled_by = ADX
+    #                NOT = { is_core_of = ADX }
+     #           }
+      #      }
+       #     add_core_of = ADX
+		#}

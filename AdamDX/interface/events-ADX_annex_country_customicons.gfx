@@ -1,0 +1,17 @@
+spriteTypes = { 
+	##Icon For: Annex all Countries
+	SpriteType = { 
+		name = "ADX_annex_all_countries-491"
+		texturefile = "gfx/interface/events/annex_country-event/ADX_annex_all_countries-491.dds"
+	}
+
+
+	##Icon For: Core the land
+		SpriteType = { 
+		name = "ADX_core_the_land-456"
+		texturefile = "gfx/interface/events/annex_country-event/ADX_core_the_land-456.dds"
+	}
+
+
+ 
+ }

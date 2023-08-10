@@ -1,4 +1,4 @@
-﻿l_english:
+l_english:
 ADX_annex_country.1.t:0 "Annex all Countries"
 ADX_annex_country.1.d:0 "Annex all the land"
 ADX_annex_country.1.a:0 "Annex All"
@@ -7,3 +7,8 @@ ADX_annex_country.1.b:0 "no dont"
 ADX_annex_country.2.t:0 "Core the Land"
 ADX_annex_country.2.d:0 "The Land Must be cored"
 ADX_annex_country.2.a:0 "Core it"
+
+
+ADX_annex_country.3.t:0 "Decore the others"
+ADX_annex_country.3.d:0 "DECORE IT!"
+ADX_annex_country.3.a:0 "deCore it"

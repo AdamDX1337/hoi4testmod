@@ -1,7 +1,9 @@
 add_namespace = ADX_annex_country
 
 
-####### FOR SOME REASON IT ONLY FIRES ON THE TEST COUNTRY AND NOT ALL COUNTRIES EVEN THOUGH ITS SET TO MAJOR, HELP!
+####### FIXED EVENTS, COULD BE BETTER
+##TODO MAKE EVENTS FIRE WITHOUT STATE
+##TODO FIX DECORING
  
 #Annex all Countries
 country_event = {
@@ -10,19 +12,20 @@ country_event = {
 	desc = ADX_annex_country.1.d
 
 	picture = ADX_annex_all_countries-491
-	fire_only_once = yes
-	major = yes
+	fire_only_once = no # KEEP NO IF WANT TO FIRE FOR ALL COUNTRIES
+	major = no
 		trigger = {
 		tag = ADX 
-		owns_state = 540
+		owns_state = 894
 		}
-	timeout_days = 24
+	timeout_days = 2
 	mean_time_to_happen = { days = 7 }
 	fire_for_sender = yes
 
 	option = {
 		name = ADX_annex_country.1.a
-		ai_chance = { factor = 1 }
+		ai_chance = { factor = 10 } 
+
 		annex_country = { 
 			target = IRQ transfer_troops = no
 		}
@@ -110,6 +113,8 @@ country_event = {
 		annex_country = { 
 			target = PRU transfer_troops = no
 		}
+			
+		
 		ADX = { transfer_state = 659 }
 		ADX = { transfer_state = 658 }
 		ADX = { transfer_state = 765 }
@@ -126,6 +131,8 @@ country_event = {
 		ADX = { transfer_state = 273 }
 		ADX = { transfer_state = 552 }
 		ADX = { transfer_state = 767 }
+		ADX = { transfer_state = 895 }
+		SAF = { transfer_state = 894 }
 		hidden_effect = {
 			
 		}
@@ -150,18 +157,20 @@ country_event = {
 	desc = ADX_annex_country.2.d
 
 	picture = ADX_core_the_land-456
-	fire_only_once = yes
+	fire_only_once = no
 	trigger = {
 		tag = ADX 
-		owns_state = 659
+		owns_state = 895
 		}
 	mean_time_to_happen = { days = 7 }
-	timeout_days = 13
+	timeout_days = 2
 	fire_for_sender = yes
-	major = yes
+	major = no
 	option = {
 		name = ADX_annex_country.2.a
-		ai_chance = { factor = 1 }
+		ai_chance = { factor = 10 }
+		SAF = { transfer_state = 895 }
+		ADX = { transfer_state = 864} 
 		every_state = {
            limit = {
                 AND = {
@@ -171,7 +180,32 @@ country_event = {
           }
         add_core_of = ADX
 		}
-		        every_state = {
+		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = ADX_annex_country.3
+	title = ADX_annex_country.3.t
+	desc = ADX_annex_country.3.d
+
+	fire_only_once = no
+	trigger = {
+		tag = ADX
+		owns_state = 864
+	}
+	mean_time_to_happen {days = 7 }
+	timeout_days = 2
+	fire_for_sender = yes
+	major = no
+	option = {
+		name = ADX_annex_country.3.a
+		ai_chance = { factor = 10 }
+		CAN = { transfer_state = 864 }
+		every_state = {
             limit = {
                 is_core_of = ADX
                 is_controlled_by = ADX
@@ -179,7 +213,7 @@ country_event = {
             }
             every_country = {
 			limit = {
-                    NOT = { has_country_flag = TEST }
+                    NOT = { tag = ADX }
                 }
                 remove_state_core = PREV
                 remove_state_claim = PREV
@@ -189,6 +223,8 @@ country_event = {
 			
 		}
 	}
+
+
 }
 # ADX = { transfer_state = 659 }
 #		every_state = {
